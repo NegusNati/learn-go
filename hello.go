@@ -1,12 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 
 	// hello()
 	// value()
 	// variable()
+	constant()
 
 }
 
@@ -43,10 +47,21 @@ func variable() {
 	var y bool
 	fmt.Println(y) // default is false
 
-	 app := "Apple"  //for both initalization and declaring variables ' := '
+	app := "Apple" //for both initalization and declaring variables ' := '
 	fmt.Println(app)
-
 
 }
 
+func constant() {
 
+	const s string = "Negus"
+
+	fmt.Println(s)
+	const n = 5000000
+	const d = 3e20 / n
+	fmt.Println(d)
+
+	fmt.Println(int64(d))
+
+	fmt.Println(math.Sin(n))
+}
