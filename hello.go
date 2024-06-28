@@ -6,7 +6,7 @@ func main() {
 
 	// hello()
 	// value()
-	variable()
+	// variable()
 
 }
 
@@ -48,3 +48,5 @@ func variable() {
 
 
 }
+
+
