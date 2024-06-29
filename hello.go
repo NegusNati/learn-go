@@ -10,8 +10,8 @@ func main() {
 	// hello()
 	// value()
 	// variable()
-	constant()
-
+	// constant()
+	forloop()
 }
 
 func hello() {
@@ -64,4 +64,46 @@ func constant() {
 	fmt.Println(int64(d))
 
 	fmt.Println(math.Sin(n))
+}
+
+func forloop() {
+
+	i := 1
+	for i < 3 {
+		fmt.Println(i) //1,2
+		i += 1
+	}
+
+	for j := 1; j < 3; j++ {
+		fmt.Println(j)
+	}
+
+	fmt.Println("======")
+
+	for i := range 5 {
+		fmt.Println("range", i)
+	}
+
+	fmt.Println("======")
+
+	arr := []int{1, 2, 3, 4, 5}
+	for i, v := range arr {
+		fmt.Println("range", i, v) // range in 'i' index with 'v' value
+	}
+
+	fmt.Println("======")
+	for {
+		fmt.Println(" just loop")
+		break //until break just loop again and again
+	}
+
+	fmt.Println("======")
+	for i := range 5 {
+		if i%2 == 0 {
+			fmt.Println("it is even")
+			continue
+		}
+		fmt.Println(i)
+	}
+
 }
