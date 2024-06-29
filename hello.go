@@ -11,7 +11,9 @@ func main() {
 	// value()
 	// variable()
 	// constant()
-	forloop()
+	// forloop()
+	branchingWithIf()
+
 }
 
 func hello() {
@@ -86,7 +88,7 @@ func forloop() {
 
 	fmt.Println("======")
 
-	arr := [] int {1, 2, 3, 4, 5}
+	arr := []int{1, 2, 3, 4, 5}
 	fmt.Println(arr)
 	for i, v := range arr {
 		fmt.Println("range", i, v) // range in 'i' index with 'v' value
@@ -108,3 +110,37 @@ func forloop() {
 	}
 
 }
+
+func branchingWithIf() {
+
+	if 7%2 == 0 {
+		fmt.Println("7 is even")
+	} else {
+		fmt.Println("7 is not even")
+	}
+
+	if 8%4 == 0 {
+		fmt.Println("8 is divisable by 4")
+	}
+	if 8%2 == 0 || 7%2 == 0 {
+		fmt.Println("either or")
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
