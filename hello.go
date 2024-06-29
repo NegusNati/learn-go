@@ -86,7 +86,8 @@ func forloop() {
 
 	fmt.Println("======")
 
-	arr := []int{1, 2, 3, 4, 5}
+	arr := [] int {1, 2, 3, 4, 5}
+	fmt.Println(arr)
 	for i, v := range arr {
 		fmt.Println("range", i, v) // range in 'i' index with 'v' value
 	}
@@ -98,7 +99,7 @@ func forloop() {
 	}
 
 	fmt.Println("======")
-	for i := range 5 {
+	for i := range 6 {
 		if i%2 == 0 {
 			fmt.Println("it is even")
 			continue
