@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"math"
+	"runtime"
+	"time"
 )
 
 func main() {
@@ -12,7 +14,8 @@ func main() {
 	// variable()
 	// constant()
 	// forloop()
-	branchingWithIf()
+	// branchingWithIf()
+	switches()
 
 }
 
@@ -125,22 +128,64 @@ func branchingWithIf() {
 	if 8%2 == 0 || 7%2 == 0 {
 		fmt.Println("either or")
 	}
-	
+
 }
 
+func switches() {
 
+	y := 2
 
+	switch y {
+	case 1:
+		fmt.Println("One")
+	case 2:
+		fmt.Println("Two")
+	default:
+		fmt.Println("it is nither 1 or 2")
+	}
 
+	switch time.Now().Weekday() {
+	case time.Saturday, time.Sunday:
+		fmt.Println("it's weekend , LFGGGG")
+	default:
+		fmt.Println("it's week day")
 
+	}
 
+	t := time.Now()
 
+	switch {
+	case t.Hour() >= 12:
+		fmt.Println("after noon ")
+	default:
+		fmt.Println(" before noon", t.Hour())
+	}
+	fmt.Print(" Go is running on")
 
+	switch os := runtime.GOOS; os {
 
+	case "windows":
+		fmt.Println("Windows")
+	case "linux":
+		fmt.Println("Linux")
+	default:
+		fmt.Println(os)
+	}
 
+	whatAmI := func(i interface{}) {
+		switch t := i.(type) {
+		case bool:
+			fmt.Println("I'm a bool")
+		case int:
+			fmt.Println("I'm a int")
+		default:
+			fmt.Printf("Don't know type %T\n", t)
 
+		}
+	}
 
+	whatAmI(true)
+	whatAmI(30)
+	whatAmI("string data")
 
-
-
-
-
+}
