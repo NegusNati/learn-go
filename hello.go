@@ -15,7 +15,8 @@ func main() {
 	// constant()
 	// forloop()
 	// branchingWithIf()
-	switches()
+	// switches()
+	arrays()
 
 }
 
@@ -163,13 +164,12 @@ func switches() {
 	fmt.Print(" Go is running on")
 
 	switch os := runtime.GOOS; os {
-
 	case "windows":
 		fmt.Println("Windows")
 	case "linux":
 		fmt.Println("Linux")
 	default:
-		fmt.Println(os)
+		fmt.Println("Definetly not mine", os)
 	}
 
 	whatAmI := func(i interface{}) {
@@ -187,5 +187,33 @@ func switches() {
 	whatAmI(true)
 	whatAmI(30)
 	whatAmI("string data")
+
+}
+
+func arrays() {
+
+	var a [5]int
+	fmt.Println("array a:", a) // [0 0 0 0 0] it is by default 0 if we don't initalize it 
+
+	a [4] = 100
+	fmt.Println("array a after [4] is initalzed:", a) //
+	fmt.Println("array a [4]:", a[4]) //
+
+	fmt.Println("array a length :", len(a)) //
+
+	b := [] int {1,2,3,4,5}
+fmt.Println("array b after initalization:", b) //
+
+// var c [] int
+// c ={ 1,2,3,4,5} we can't assign like this
+// fmt.Println("array c after initalization:",c)
+
+	c :=  [...]int {1, 3,6,9}
+	fmt.Println("dcl :", c)
+
+	d := [...] int {100, 3:10 , 11}
+	fmt.Println("dcl :", d)
+
+
 
 }
