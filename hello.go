@@ -16,7 +16,8 @@ func main() {
 	// forloop()
 	// branchingWithIf()
 	// switches()
-	arrays()
+	// arrays()
+	sliceExample()
 
 }
 
@@ -193,26 +194,68 @@ func switches() {
 func arrays() {
 
 	var a [5]int
-	fmt.Println("array a:", a) // [0 0 0 0 0] it is by default 0 if we don't initalize it 
+	fmt.Println("array a:", a) // [0 0 0 0 0] it is by default 0 if we don't initalize it
 
-	a [4] = 100
+	a[4] = 100
 	fmt.Println("array a after [4] is initalzed:", a) //
-	fmt.Println("array a [4]:", a[4]) //
+	fmt.Println("array a [4]:", a[4])                 //
 
 	fmt.Println("array a length :", len(a)) //
 
-	b := [] int {1,2,3,4,5}
-fmt.Println("array b after initalization:", b) //
+	b := []int{1, 2, 3, 4, 5}
+	fmt.Println("array b after initalization:", b) //
 
-// var c [] int
-// c ={ 1,2,3,4,5} we can't assign like this
-// fmt.Println("array c after initalization:",c)
+	// var c [] int
+	// c ={ 1,2,3,4,5} we can't assign like this
+	// fmt.Println("array c after initalization:",c)
 
-	c :=  [...]int {1, 3,6,9}
+	c := [...]int{1, 3, 6, 9} // if we don't want to assgin the array size
 	fmt.Println("dcl :", c)
 
-	d := [...] int {100, 3:10 , 11}
+	d := [...]int{100, 3: 10, 11}
 	fmt.Println("dcl :", d)
+
+	var twoDimensional [2][3]int
+	for i := 0; i < 2; i++ {
+		for j := 0; j < 3; j++ {
+			twoDimensional[i][j] = i + j
+		}
+	}
+
+	fmt.Println("twoDimensional :", twoDimensional)
+
+	twoD := [2][4]int{
+		{1, 2, 3, 4},
+		{1, 2, 3, 4},
+	}
+	fmt.Println("twoD :", twoD)
+
+}
+
+func sliceExample() {
+
+	// var s []string
+	// fmt.Println("uninit: ", s, s == nil, len(s))
+
+	// s = make([]string, 3)
+	// fmt.Println("emp: ", s, s == nil, len(s), "Cap: ", cap(s))
+
+
+
+	// An Array of integers
+	arr := [5]int{1, 2, 3, 4, 5}
+	fmt.Printf("Array: %v, Type: %T\n", arr, arr)
+	//Array: [1 2 3 4 5], Type: [5]int
+
+	// A Slice of integers
+	slice := []int{1, 2, 3, 4, 5}
+	fmt.Printf("Slice with values: %v, Type: %T\n", slice, slice)
+	// Slice with values: [1 2 3 4 5], Type: []int
+
+	//we can Create another slice with different length
+	anotherSlice := []int{10, 20, 30}
+	fmt.Printf("Another slice: %v, Type: %T\n", anotherSlice, anotherSlice)
+	// Another slice: [10 20 30], Type: []int
 
 
 
